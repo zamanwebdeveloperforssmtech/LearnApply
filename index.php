@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Our Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
 </head>
 <body>
-	<form action="" method="POST">
-		<input type="text" placeholder="to" name="to"><br>
-		<input type="text" placeholder="subject" name="subject"><br>
-		<input type="text" placeholder="from" name="from"><br>
-		<textarea cols="30" rows="8" name="textarea"></textarea>
-		<input type="submit" value="send">
-	</form>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="">
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Your name..">
+
+    <label for="name">Email To</label>
+    <input type="text" name="firstname" placeholder="Your name..">
+
+    <label for="name">Email To</label>
+    <input type="text" name="firstname" placeholder="Your name..">
+
+
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
 </body>
 </html>
-<?php
-	$to = $_POST['to'];
-	$subject = $_POST['subject'];
-	$message = $_POST['textarea'];
-	$headers = "From: ".$_POST['from']."\r\n";
-	$headers .= "Content-type: text/html;charset=UTF-8" . "\r\n";
-
-	mail($to, $subject, $message, $headers);
-
-
-
-?>
